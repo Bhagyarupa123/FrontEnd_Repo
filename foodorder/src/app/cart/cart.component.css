@@ -1,0 +1,72 @@
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li a{
+    height: 23em;
+    width: 20rem;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+     overflow: hidden; 
+    color: #e72929
+}
+li a :hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.description{
+    color: black;
+    font-size: 12px;
+}
+
+.content{
+    /* padding: 5rem 1rem; */
+    position: relative
+}
+
+.favorite{
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+.favorite.not{
+    color: black
+}
+
+.cook-time{
+    font-size: .8em;
+    flex:3;
+}
+
+.price{
+    color: #424242;
+    margin-top: .2rem
+}
+
+
+
+.cart-button{
+    cursor: pointer;
+    background-color: #e72929;
+    color: white;
+    border:none;
+    font-size: 1rem;
+}
+
+.delete-cart{
+    cursor: pointer;
+    background-color: #e72929;
+    color: white;
+    border:none;
+    font-size: 1rem;
+}

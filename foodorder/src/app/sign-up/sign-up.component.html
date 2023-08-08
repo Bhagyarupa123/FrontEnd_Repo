@@ -1,0 +1,62 @@
+<div class="container">
+  <div classs="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="form">
+        <h2 id="SignUpForm">SignUp Form</h2>
+        <form [formGroup]="SignUpForm" (ngSubmit)="Onsubmit()">
+      
+      
+          
+        <div class="form-group">
+            <label for="fname">First Name</label>
+          <input type="text"  placeholder="username" [(ngModel)]="usermodel.userName"
+           formControlName="username" class="form-control"
+           [ngClass]="{'is-invalid':submitted && SignUpForm.controls['username'].errors}">
+          <div *ngIf="submitted && SignUpForm.controls['username'].errors" class="text-danger">
+            <div *ngIf="submitted && SignUpForm.controls['username'].errors['required']">
+              UserName is required
+            </div>
+          </div>
+        </div>
+      
+          
+        <div class="form-group">
+            <label for="password">Password</label>
+          <input [ngClass]="{'is-invalid':submitted && SignUpForm.controls['password'].errors}" type="password" id="Password" placeholder="password" [(ngModel)] = "usermodel.password"
+          name="password" formControlName="password" class="form-control">
+          <div *ngIf="submitted && SignUpForm.controls['password'].errors" class="text-danger">
+            <div *ngIf="submitted && SignUpForm.controls['password'].errors['required']">
+              password is required
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input [ngClass]="{'is-invalid':submitted && SignUpForm.controls['email'].errors}" 
+            type = "email" id="email" placeholder="email" name="email" formControlName="email"  [(ngModel)] = "usermodel.email"class="form-control">
+            <div *ngIf="submitted && SignUpForm.controls['email'].errors" class="text-danger">
+              <div *ngIf="submitted && SignUpForm.controls['email'].errors['required']">
+                Email is required
+              </div>
+              <div *ngIf="submitted && SignUpForm.controls['email'].errors['email']">
+                Email is invalid
+              </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for = "Phno">Mobile Number</label>
+            <input [ngClass]="{'is-invalid':submitted && SignUpForm.controls['number'].errors}" 
+            type="text" id="phno" placeholder="Phonenumber" class="form-control"  [(ngModel)] = "usermodel.phonenumber" formControlName="number">
+            <div *ngIf="submitted && SignUpForm.controls['number'].errors" class="text-danger">
+              <div *ngIf="submitted && SignUpForm.controls['number'].errors['required']">
+                Number is required
+              </div>
+            </div>
+        </div>
+          <input type="submit" value="submit"  id="btn" >
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

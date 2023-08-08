@@ -1,0 +1,103 @@
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li a{
+    height: 23em;
+    width: 20rem;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+     overflow: hidden; 
+    color: #e72929;
+    text-decoration: none;
+}
+li a :hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.description{
+    color: black;
+    font-size: 12px;
+}
+
+.content{
+    /* padding: 5rem 1rem; */
+    position: relative
+}
+
+.favorite{
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+.favorite.not{
+    color: black
+}
+
+.cook-time{
+    font-size: .8em;
+    flex:3;
+}
+
+.price{
+    color: #424242;
+    margin-top: .2rem
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem
+}
+
+.searchInput{
+    border-radius:  10rem 0 0 10rem;
+    border: none;
+    height: 3rem;
+    width: 20rem;
+    background-color: #f1f1f1;
+    padding: 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+
+}
+
+.searchButton{
+    color: gray;
+    height: 3rem;
+    width: 5rem;
+    font-size: 1rem;
+    border-radius: 0 10rem 10rem 0;
+ 
+    border: none;
+    background-color: #e72929;
+    color: white;
+    opacity: 8;
+
+}
+
+.searchButton hover{
+    opacity:1;
+    cursor: pointer
+}
+
+.cart-button{
+    cursor: pointer;
+    background-color: #e72929;
+    color: white;
+    border:none;
+    font-size: 1rem;
+}
+

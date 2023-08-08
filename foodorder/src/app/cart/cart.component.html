@@ -1,0 +1,32 @@
+<div class="container">
+    
+<ul>
+    <li *ngFor="let food of foodItems">
+        <a>
+        <img [src]="food.recipeImage" alt="food Image">
+        <div class="content">
+            <div class="name">
+                {{food.recipeName}}
+              
+            </div>
+            <div class="description">
+             {{food.description}}
+            </div>
+            <div class="cook-time">
+                <span>🕑</span>
+                {{food.cookTime}}
+            </div>
+            <div class="price">
+                {{ food.price | currency:'INR'}}
+            </div>
+            <span class="favorite {{food.favorite?' ' : 'not'  }}"> ♥</span>
+        </div>
+         <div>
+            <button  class="cart-button" (click)="confirmOrder(food.recipeId)">Order</button>
+            <button class="delete-cart" (click)="deleteCart(food.cartId)">Remove</button>
+        </div> 
+        </a>
+        </li>
+</ul>
+
+</div>

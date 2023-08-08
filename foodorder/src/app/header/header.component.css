@@ -1,0 +1,80 @@
+header{
+    background-color: white;
+    
+    border-bottom: 1px solid #e72929 ;
+}
+
+
+a.logo:hover{
+    background-color: #e72929;
+    color: white;
+}
+
+.container{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    
+
+}
+
+a.logo{
+    font-weight: bold;
+    padding: 1em;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+}
+
+
+.cart-icon {
+    font-size: 24px;
+    color: #007bff;
+    cursor: pointer;
+    border:none;
+    outline: none;
+    
+   
+  }
+
+  .order-icon{
+    font-size: 15px;
+    color: #e72929;
+    font-weight: bold;
+    cursor: pointer;
+    border:none;
+    outline: none;
+    
+  }
+ 
+  ul{
+    display:flex;
+    
+    float:right;
+    text-decoration: none;
+    margin-left:800px;
+    
+  }
+  li{
+      text-decoration: none;
+      list-style-type: none;
+      padding: 20px;
+      float: right;
+      font-size: 20px;
+  }
+  .buttons{
+      text-decoration: none;
+      cursor: pointer;
+  }
+  a{
+      text-decoration: none;
+      display:inline-block;
+
+  }
+  li:hover{
+      background-color: rgb(252,188,188);
+  }
+  

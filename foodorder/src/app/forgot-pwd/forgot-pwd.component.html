@@ -1,0 +1,18 @@
+<div class="form">
+    <h2>Reset your Password</h2>
+        <form [formGroup]="ResetPwd" (onSubmit)="Onsubmit()">
+            <div class="form-group">
+                <label for="forgotpwd">Enter User Name</label>
+                <input type="text" [ngClass]="{'is-invalid': submitted && ResetPwd.controls['resetpwd'].errors}" formControlName="resetpwd">
+
+                <!-- <input type="text" [ngClass]="{'is-invalid':submitted && ResetPwd.controls.resetpwd.errors}" formControlName="resetpwd"> -->
+                <div *ngIf="submitted && ResetPwd.controls['resetpwd'].errors" class="text-danger">
+                    <div *ngIf="submitted && ResetPwd.controls['resetpwd'].errors['required']">
+                      UserName is required
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="submit" id="btn">
+        </form>
+        
+</div>
