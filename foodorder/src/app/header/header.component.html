@@ -10,15 +10,12 @@
         <a class="login" [ngClass]="{'hidden':islogin}" routerLink="/login">Login</a>
         <div class = "buttons">
             <ul>
-<<<<<<< HEAD
-                <li><a class="fas fa-shopping-cart cart-icon" (click)="onGetCart()"></a></li>
-                <li><a class="order-icon" (click)="onGetOrders()">Orders</a></li>
-                <li><a class="order-icon" (click)="logout()">Logout</a></li>  
-=======
+                
                 <li><a class="fas fa-shopping-cart cart-icon" (click)="onGetCart()" [ngClass]="{'hidden':!islogin}"></a></li>
                 <li><a class="order-icon" (click)="onGetOrders()"  [ngClass]="{'hidden':!islogin}">Orders</a></li>
+                <li><a class="order-icon" (click)="logout()">Logout</a></li>  
+                
                     
->>>>>>> 1321c69190210db85720da2b69061557adc084ca
                     <!-- <a routerLink="cart">Cart</a> -->
                     <!-- <app-cart *ngIf="showCart"></app-cart> -->
                     
