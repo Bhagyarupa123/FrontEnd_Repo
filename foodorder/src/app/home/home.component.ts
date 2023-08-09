@@ -7,6 +7,7 @@ import { CartService } from '../services/cart.service';
 import { OrderModel } from '../shared/models/order';
 import {OrderService} from '../services/orderservice.service';
 import { AuthService } from '../sharedGuard/auth.service';
+import { UserserviceService } from '../services/userservice.service';
 @Component({
    selector: 'app-home',
    templateUrl: './home.component.html',
@@ -22,11 +23,15 @@ export class HomeComponent {
    ordermodel: OrderModel = new OrderModel()
    clicked:boolean = false;
    
+   islogin = true;
 
 
 
 
-   constructor(private fs: FoodService, private router: ActivatedRoute, private cartservice: CartService,private orderservice: OrderService,private auth: AuthService,private route: Router) { }
+   
+   constructor(private fs: FoodService, private router: ActivatedRoute, private cartservice: CartService,private orderservice: OrderService, private userservice: UserserviceService,private route: Router,private auth: AuthService,) { 
+      this.userservice.checklogin.subscribe(x=> this.islogin=x)
+   }
 
    ngOnInit(): void {
       this.fs.getRecipes().subscribe(

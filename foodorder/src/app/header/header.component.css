@@ -1,9 +1,20 @@
-header{
+.header{
+    position: relative;
     background-color: white;
-    
-    border-bottom: 1px solid #e72929 ;
-}
+    border-bottom: 1px solid #e72929;
+    box-shadow: 15px 15px 15px 8px rgba(211, 17, 17, 0.3);
 
+
+}
+.home-icon
+  {     font-size: 24px;
+        color: #007bff;
+        cursor: pointer;
+        border:none;
+        outline: none;
+        padding: 17px;
+       
+      }
 
 a.logo:hover{
     background-color: #e72929;
@@ -14,8 +25,6 @@ a.logo:hover{
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-
-    
 
 }
 
@@ -78,3 +87,25 @@ ul{
       background-color: rgb(252,188,188);
   }
   
+  .hidden{
+      display: none;
+  }
+
+  .zomatodes{
+      white-space: nowrap;
+      text-overflow: clip;
+      overflow: hidden;
+      font-size: 15px;
+      padding: 20px 450px;
+      color: #e72929;
+      font-weight: bold;
+     
+  }
+
+  .login{
+     margin: 15px;
+     color: #e72929;
+     font-weight: bold;
+     font-size: 15px;
+
+  }

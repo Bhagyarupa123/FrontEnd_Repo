@@ -16,10 +16,11 @@ ul li a{
     display: flex;
     flex-direction: column;
      overflow: hidden; 
-    color: #e72929
+    color: #e72929;
+    text-decoration: none;
 }
 li a :hover{
-    opacity: 0.9;
+    opacity: 0.8;
     cursor: pointer;
 }
 
@@ -60,7 +61,9 @@ li a :hover{
     background-color: #e72929;
     color: white;
     border:none;
-    font-size: 1rem;
+    font-size: 13px;
+    border-radius: 4px 4px 4px 4px;
+    
 }
 
 .delete-cart{
@@ -69,4 +72,20 @@ li a :hover{
     color: white;
     border:none;
     font-size: 1rem;
+    margin: 20px;
+    font-size: 13px;
+    border-radius: 4px 4px 4px 4px;
+}
+
+
+.image-class{
+    height: 200px;
+    width: 200px;
+}
+
+.cart-item{
+    text-align:center;
+    padding:30px;
+    color: #e72929;
+   
 }

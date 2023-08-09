@@ -3,10 +3,18 @@
     <input  class="searchInput" type="text" placeholder="search your favorite food" id="recipeSearch"  [(ngModel)]="searchItem" >
     <button class="searchButton" (click)="searchFood()">Search</button>
 </div>
+<<<<<<< HEAD
 <div class="container">
     <div class="box" *ngFor = "let food of foodItems">
         <div class="card">
             <img src="{{food.imageUrl}}" alt="food Image">
+=======
+
+<ul>
+    <li *ngFor="let food of foodItems">
+        <a>
+        <img class="image-class" src="{{food.imageUrl}}" alt="food Image">
+>>>>>>> 1321c69190210db85720da2b69061557adc084ca
         <div class="content">
             <div class="name">
                 {{food.recipeName}}
@@ -24,9 +32,15 @@
             </div>
         </div>
         <div>
+<<<<<<< HEAD
             
             <button class="btn btn-info" (click)="saveToCart(food.recipeId)" >{{clicked ? 'Added' : 'Add'}}</button>
             <button  class="btn btn-warning" (click)="confirmOrder(food.recipeId)">Order</button>
+=======
+            <!-- <input type="submit" value="Add to Cart" class="cart-button" on-click='saveToCart(food.RecipeId)'> -->
+            <button class="btn btn-info" (click)="saveToCart(food.recipeId)" [disabled]="!islogin" >Add</button>
+            <button  class="btn btn-warning" (click)="confirmOrder(food.recipeId)" [disabled]="!islogin">Order</button>
+>>>>>>> 1321c69190210db85720da2b69061557adc084ca
             
         </div>
     </div>

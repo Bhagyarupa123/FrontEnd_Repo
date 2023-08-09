@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:'home', component: HomeComponent,canActivate:[AuthGuard]},
   {path:'search/:searchItem', component: HomeComponent},
   {path:'login',component:LoginComponent},
-  {path:'',redirectTo: 'login', pathMatch: "full"},
+  {path:'',redirectTo: 'home', pathMatch: "full"},
   {path:'SignUp',component: SignUpComponent},
   {path:'ResetPwd',component:ForgotPwdComponent},
   {path:'newpassword',component:NewpasswordComponent},

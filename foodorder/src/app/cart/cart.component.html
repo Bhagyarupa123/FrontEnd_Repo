@@ -1,9 +1,9 @@
 <div class="container">
-    
+    <div class="cart-item">Cart Items</div>
 <ul>
     <li *ngFor="let food of foodItems">
         <a>
-        <img [src]="food.recipeImage" alt="food Image">
+        <img class="image-class" [src]="food.recipeImage" alt="food Image">
         <div class="content">
             <div class="name">
                 {{food.recipeName}}

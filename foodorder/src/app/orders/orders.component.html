@@ -1,9 +1,9 @@
 <div class="container">
-    
+     <div class="class-order">Order Items</div>
     <ul>
         <li *ngFor="let food of foodItems">
             <a>
-            <img src="{{food.recipeImage}}" alt="food Image">
+            <img src="{{food.recipeImage}}" class="image-class" alt="food Image">
             <div class="content">
                 <div class="name">
                     {{food.recipeName}}
@@ -20,6 +20,8 @@
                     {{ food.price | currency:'INR'}}
                 </div>
                 <span class="favorite {{food.favorite?' ' : 'not'  }}"> ♥</span>
+                <button class="delete-order" (click)="deleteOrder(food.orderId)">Cancel Order</button>
+
             </div>
             </a>
             </li>

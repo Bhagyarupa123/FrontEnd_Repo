@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { UserserviceService } from '../services/userservice.service';
 import { AuthResponse } from '../shared/models/authResponse';
 import { LoginModel } from '../shared/models/login';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -28,7 +29,12 @@ export class LoginComponent implements OnInit{
   loginform!: FormGroup;
   submitted=false;
   login: LoginModel= new LoginModel()
-  constructor(private router:Router,private formbuilder: FormBuilder, private userService: UserserviceService){}
+  islogin:boolean= false
+
+
+  constructor(private router:Router,private formbuilder: FormBuilder, private userService: UserserviceService){
+    this.userService.checklogin.subscribe(x=> this.islogin=x)
+  }
   ngOnInit(){
     this.loginform = this.formbuilder.group({
       username:['',[Validators.required,Validators.minLength(4)]] ,
@@ -48,6 +54,7 @@ console.log(response);
       this.authResponse=response
       localStorage.setItem('userId',response.userId)
       localStorage.setItem('token',response.token)
+      this.userService.islogin.next(true);
       this.router.navigate(["/home"])
     }
    
