@@ -3,12 +3,15 @@
   </head>
 <header class="header" >
     <div class="container">
-        <a class="fa fa-home  home-icon"  routerLink="/home"></a>
+        <a class="fa fa-home  home-icon"  routerLink="/home"  [ngClass]="{'hidden':!islogin}"></a>
+
         <a  class="logo" style="color:  #af1313">Zomato</a>
+        <div class="zomatodes" [ngClass]="{'hidden':islogin}">Fastest food delivery app!</div>
+        <a class="login" [ngClass]="{'hidden':islogin}" routerLink="/login">Login</a>
         <div class = "buttons">
             <ul>
-                <li><a class="fas fa-shopping-cart cart-icon" (click)="onGetCart()"></a></li>
-                <li><a class="order-icon" (click)="onGetOrders()">Orders</a></li>
+                <li><a class="fas fa-shopping-cart cart-icon" (click)="onGetCart()" [ngClass]="{'hidden':!islogin}"></a></li>
+                <li><a class="order-icon" (click)="onGetOrders()"  [ngClass]="{'hidden':!islogin}">Orders</a></li>
                     
                     <!-- <a routerLink="cart">Cart</a> -->
                     <!-- <app-cart *ngIf="showCart"></app-cart> -->

@@ -27,8 +27,8 @@
         </div>
         <div>
             <!-- <input type="submit" value="Add to Cart" class="cart-button" on-click='saveToCart(food.RecipeId)'> -->
-            <button class="btn btn-info" (click)="saveToCart(food.recipeId)" >Add</button>
-            <button  class="btn btn-warning" (click)="confirmOrder(food.recipeId)">Order</button>
+            <button class="btn btn-info" (click)="saveToCart(food.recipeId)" [disabled]="!islogin" >Add</button>
+            <button  class="btn btn-warning" (click)="confirmOrder(food.recipeId)" [disabled]="!islogin">Order</button>
             
         </div>
         </a>

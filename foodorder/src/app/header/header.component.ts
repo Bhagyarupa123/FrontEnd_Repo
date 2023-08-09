@@ -3,6 +3,7 @@ import { CartService } from '../services/cart.service';
 import { CartModel } from '../shared/models/cart';
 import { FoodItemModel } from '../shared/models/food';
 import { Router } from '@angular/router';
+import { UserserviceService } from '../services/userservice.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,18 +11,20 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 
-  constructor(private cartservice: CartService , private router: Router){}
+  constructor(private cartservice: CartService , private router: Router, private userservice: UserserviceService){
+    this.userservice.checklogin.subscribe(x=> this.islogin=x)
+
+  }
 
   @Output() recipeEmitted= new EventEmitter<FoodItemModel[]>();
   foodItems: FoodItemModel[] = [];
   cartModel: CartModel = new CartModel()
   searchItem: string = '';
   // showCart=false;
-  buttondisplay = false;
+  islogin = true;
+
 
   onGetCart(){
-    // this.showCart=trur
-   // this.recipeEmitted.emit(this.foodItems)
     this.router.navigate(['/cart']);
       
     }
@@ -30,10 +33,9 @@ export class HeaderComponent {
       this.router.navigate(['/orders']);
     }
 
-    // onRecipeEmitted(foodItems: FoodItemModel[]){
-    //   this.recipeEmitted.emit(foodItems)
-    // }
     
+     
+   
     
 
      
