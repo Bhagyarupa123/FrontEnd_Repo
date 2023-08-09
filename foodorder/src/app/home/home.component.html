@@ -3,11 +3,10 @@
     <input  class="searchInput" type="text" placeholder="search your favorite food" id="recipeSearch"  [(ngModel)]="searchItem" >
     <button class="searchButton" (click)="searchFood()">Search</button>
 </div>
-
-<ul>
-    <li *ngFor="let food of foodItems">
-        <a>
-        <img src="{{food.imageUrl}}" alt="food Image">
+<div class="container">
+    <div class="box" *ngFor = "let food of foodItems">
+        <div class="card">
+            <img src="{{food.imageUrl}}" alt="food Image">
         <div class="content">
             <div class="name">
                 {{food.recipeName}}
@@ -23,16 +22,29 @@
             <div class="price">
                 {{ food.price | currency:'INR'}}
             </div>
-            <span class="favorite {{food.favorite?' ' : 'not'  }}"> ♥</span>
         </div>
         <div>
-            <!-- <input type="submit" value="Add to Cart" class="cart-button" on-click='saveToCart(food.RecipeId)'> -->
-            <button class="btn btn-info" (click)="saveToCart(food.recipeId)" >Add</button>
+            
+            <button class="btn btn-info" (click)="saveToCart(food.recipeId)" >{{clicked ? 'Added' : 'Add'}}</button>
             <button  class="btn btn-warning" (click)="confirmOrder(food.recipeId)">Order</button>
             
         </div>
-        </a>
-        </li>
-</ul>
+    </div>
+</div>
 
+<!--
+<div class="container">
+    <div class="box" *ngFor = "let food of foodItems">
+        <div class="_card" >
+            
+            <img src={{food.imageUrl}} alt="">
+            <p>{{food.recipeName}}</p>
+            <p>{{food.description}}</p>
+            <p>{{food.cookTime}}</p>
+            <p>{{ food.price | currency:'INR'}}</p>
+            <button class="btn btn-info" (click)="saveToCart(food.recipeId)" >{{clicked ? 'Added' : 'Add'}}</button>
+            <button  class="btn btn-warning" (click)="confirmOrder(food.recipeId)">Order</button>
+        </div>
 
+    </div>
+</div>-->

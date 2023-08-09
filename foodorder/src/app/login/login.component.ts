@@ -44,10 +44,13 @@ export class LoginComponent implements OnInit{
 console.log(response);
   if(response!==null){
     if(response.token!==null){
+     
       this.authResponse=response
       localStorage.setItem('userId',response.userId)
+      localStorage.setItem('token',response.token)
       this.router.navigate(["/home"])
     }
+   
   }
 
     })

@@ -34,6 +34,9 @@ export class HeaderComponent {
     //   this.recipeEmitted.emit(foodItems)
     // }
     
-
+    logout(){
+      localStorage.removeItem('token');
+      this.router.navigate(['login'])
+   }
      
 }

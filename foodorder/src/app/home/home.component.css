@@ -1,14 +1,23 @@
-ul{
+
+.container{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    list-style-type: none;
-    padding: 0;
+    padding: 20px;
+    margin: 20px;
 }
-
-ul li a{
-    height: 23em;
+.box{
+   margin: 10px 40px 10px 30px;
+   padding: 3px;
+}
+img{
+    height: 150px;
+    width: 200px;
+}
+ul li {
+   
     width: 20rem;
     border: 1px solid whitesmoke;
     border-radius: 1rem;
@@ -18,6 +27,7 @@ ul li a{
      overflow: hidden; 
     color: #e72929;
     text-decoration: none;
+    list-style-type: none;
 }
 li a :hover{
     opacity: 0.9;
@@ -31,6 +41,7 @@ li a :hover{
 
 .content{
     /* padding: 5rem 1rem; */
+    
     position: relative
 }
 
@@ -101,3 +112,95 @@ li a :hover{
     font-size: 1rem;
 }
 
+/*
+.box{
+    display: flex;
+    flex-direction: column;
+    height: 310px;
+    width: 250px;
+   
+    border-style: solid;
+    border-color: rgb(253, 242, 242);
+    margin: 30px 40px 20px 80px;
+    
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px pink;
+    
+}
+.container{
+    display: flex;
+    margin-left: 80px;
+    flex-wrap: wrap;
+    margin: 20px 50px 0px 90px;
+}
+.container :hover{
+    
+    
+    transition-property: transform;
+    opacity: 1px;
+    
+    
+    
+}
+button{
+   float : right;
+   margin:5px;
+}
+img{
+    height: 150px;
+    width: 245px;
+   
+    
+    /*float: left;*/
+
+/*
+.content{
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+     overflow: hidden;
+}
+
+.content{
+    margin-top: 80px;
+}
+.search{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem
+}
+
+.searchInput{
+    border-radius:  10rem 0 0 10rem;
+    border: none;
+    height: 3rem;
+    width: 20rem;
+    background-color: #f1f1f1;
+    padding: 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+
+}
+
+.searchButton{
+    color: gray;
+    height: 3rem;
+    width: 5rem;
+    font-size: 1rem;
+    border-radius: 0 10rem 10rem 0;
+ 
+    border: none;
+    background-color: #e72929;
+    color: white;
+    opacity: 8;
+
+}
+
+.searchButton hover{
+    opacity:1;
+    cursor: pointer
+}
+*/

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { FoodService } from '../services/food/food/food.service';
 import { FoodItemModel } from '../shared/models/food'
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cart, CartModel } from '../shared/models/cart';
 import { CartService } from '../services/cart.service';
 import { OrderModel } from '../shared/models/order';
 import {OrderService} from '../services/orderservice.service';
+import { AuthService } from '../sharedGuard/auth.service';
 @Component({
    selector: 'app-home',
    templateUrl: './home.component.html',
@@ -19,13 +20,13 @@ export class HomeComponent {
    cartModel: CartModel = new CartModel()
    searchItem: string = '';
    ordermodel: OrderModel = new OrderModel()
-   clicked= false;
+   clicked:boolean = false;
    
 
 
 
 
-   constructor(private fs: FoodService, private router: ActivatedRoute, private cartservice: CartService,private orderservice: OrderService) { }
+   constructor(private fs: FoodService, private router: ActivatedRoute, private cartservice: CartService,private orderservice: OrderService,private auth: AuthService,private route: Router) { }
 
    ngOnInit(): void {
       this.fs.getRecipes().subscribe(
@@ -64,7 +65,7 @@ export class HomeComponent {
          console.log(data);
       })
     }
-
+  
 
 
 
