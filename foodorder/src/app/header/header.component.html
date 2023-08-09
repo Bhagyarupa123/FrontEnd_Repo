@@ -1,9 +1,10 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   </head>
-<header>
+<header class="header" >
     <div class="container">
-        <a href="#" routerLink="/home" class="logo" style="color:  #af1313">Zomato</a>
+        <a class="fa fa-home  home-icon"  routerLink="/home"></a>
+        <a  class="logo" style="color:  #af1313">Zomato</a>
         <div class = "buttons">
             <ul>
                 <li><a class="fas fa-shopping-cart cart-icon" (click)="onGetCart()"></a></li>
@@ -16,4 +17,5 @@
         </div>
     </div>
 </header>
+
 

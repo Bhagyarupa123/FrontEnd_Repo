@@ -26,5 +26,11 @@ export class OrdersComponent {
 
   }
 
+  deleteOrder(orderId: number){
+    this.orderservice.deleteOrder(orderId).subscribe(()=> 
+      console.log("Deleted successfully!")
+    )
+  }
+
 
 }

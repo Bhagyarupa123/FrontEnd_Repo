@@ -25,6 +25,10 @@ export class OrderService {
     return this.http.get<OrderItemModel[]>(this.endpoint + "GetAllOrders/" + Number(localStorage.getItem('userId')));
   }
 
+  deleteOrder(id: number){
+    return this.http.delete(this.endpoint+"CancelOrder/" +id);
+  }
+
 
 
 }
