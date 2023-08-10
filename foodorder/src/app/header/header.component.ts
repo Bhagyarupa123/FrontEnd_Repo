@@ -13,7 +13,6 @@ export class HeaderComponent {
 
   constructor(private cartservice: CartService , private router: Router, private userservice: UserserviceService){
     this.userservice.checklogin.subscribe(x=> this.islogin=x)
-
   }
 
   @Output() recipeEmitted= new EventEmitter<FoodItemModel[]>();
@@ -33,13 +32,12 @@ export class HeaderComponent {
       this.router.navigate(['/orders']);
     }
 
-    
-     
-   
-    
+
     logout(){
+     
       localStorage.removeItem('userId')
       localStorage.removeItem('token');
+       this.userservice.islogin.next(false);
       this.router.navigate(['login'])
    }
      

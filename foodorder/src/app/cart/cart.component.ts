@@ -48,5 +48,7 @@ export class CartComponent {
     this.cartservice.deleteCart(cartId).subscribe(()=> 
       console.log("Deleted successfully!")
     )
+    window.location.reload();
+
   }
 }

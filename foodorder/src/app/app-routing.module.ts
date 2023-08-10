@@ -10,7 +10,7 @@ import {OrdersComponent} from './orders/orders.component'
 import { HeaderComponent } from './header/header.component';
 import { AuthGuard } from './sharedGuard/auth.guard';
 const routes: Routes = [
-  {path:'home', component: HomeComponent,canActivate:[AuthGuard]},
+  {path:'home', component: HomeComponent},
   {path:'search/:searchItem', component: HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'',redirectTo: 'home', pathMatch: "full"},

@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit{
   loginform!: FormGroup;
   submitted=false;
   login: LoginModel= new LoginModel()
-  islogin:boolean= false
+  islogin:boolean= true
 
 
   constructor(private router:Router,private formbuilder: FormBuilder, private userService: UserserviceService){

@@ -26,11 +26,11 @@
         </div>
         <div>
             
-            <button class="btn btn-info" (click)="saveToCart(food.recipeId)"  [disabled]="!islogin">{{clicked ? 'Added' : 'Add'}}</button>
+            <button class="btn btn-info" (click)="saveToCart(food.recipeId)"  [disabled]="!islogin">{{isSelected(food.recipeId) ? 'Added' : 'Add'}}</button>
             
             <!-- <input type="submit" value="Add to Cart" class="cart-button" on-click='saveToCart(food.RecipeId)'> -->
             
-            <button  class="btn btn-warning" (click)="confirmOrder(food.recipeId)" [disabled]="!islogin">Order</button>
+            <button  class="btn btn-warning" (click)="confirmOrder(food.recipeId)" [disabled]="!islogin">{{isSelectedOrder(food.recipeId) ? 'Ordered' : 'Order'}}</button>
             
         </div>
     </li>

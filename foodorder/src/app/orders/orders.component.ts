@@ -30,6 +30,7 @@ export class OrdersComponent {
     this.orderservice.deleteOrder(orderId).subscribe(()=> 
       console.log("Deleted successfully!")
     )
+    window.location.reload();
   }
 
 
