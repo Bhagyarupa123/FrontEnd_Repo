@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit{
   buttondisplay = false;
   authResponse!: AuthResponse
   token=''
+  userFound:boolean = true;
 //   createAuthorizationHeader(headers:Headers,basic){
 //     headers.append('Authorization',basic);
 // }
@@ -47,8 +48,9 @@ export class LoginComponent implements OnInit{
   loginUser(){
     console.log(this.login)
     this.userService.userLogin(this.login).subscribe((response:any)=>{
-console.log(response);
-  if(response!==null){
+    console.log(response);
+    this.userFound = true;
+    if(response!==null){
     if(response.token!==null){
      
       this.authResponse=response
@@ -57,10 +59,17 @@ console.log(response);
       this.userService.islogin.next(true);
       this.router.navigate(["/home"])
     }
+  
+    
    
   }
 
-    })
+    },
+    (error) => {
+      // User not found, handle the error and set the flag
+      alert("Please enter valid credentials")
+      this.userFound = false;
+  })
   }
   Onsubmit(){
     this.submitted = true

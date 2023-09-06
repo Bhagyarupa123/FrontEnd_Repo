@@ -40,7 +40,8 @@ import { OrdersComponent } from './orders/orders.component';
     FormsModule,
    ],
   providers: [
-    CurrencyPipe
+    CurrencyPipe,
+    HomeComponent
   ],
   bootstrap: [AppComponent]
 })

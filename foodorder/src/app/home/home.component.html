@@ -5,7 +5,8 @@
 </div>
 
 <ul>
-    <li *ngFor="let food of foodItems">
+    <p *ngIf = "foodItems.length === 0">Items not Found</p>
+    <li *ngFor="let food of foodItems" >
         
         <img class="image-class" src="{{food.imageUrl}}" alt="food Image">
         <div class="content">
@@ -30,7 +31,7 @@
             
             <!-- <input type="submit" value="Add to Cart" class="cart-button" on-click='saveToCart(food.RecipeId)'> -->
             
-            <button  class="btn btn-warning" (click)="confirmOrder(food.recipeId)" [disabled]="!islogin">{{isSelectedOrder(food.recipeId) ? 'Ordered' : 'Order'}}</button>
+            <button  class="btn btn-warning" (click)="confirmOrder(food.recipeId)" [disabled]="!islogin">order</button>
             
         </div>
     </li>

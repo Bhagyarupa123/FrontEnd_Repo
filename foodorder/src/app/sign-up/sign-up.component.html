@@ -8,7 +8,7 @@
       
           
         <div class="form-group">
-            <label for="fname">First Name</label>
+            <label for="fname">User Name</label>
           <input type="text"  placeholder="username" [(ngModel)]="usermodel.userName"
            formControlName="username" class="form-control"
            [ngClass]="{'is-invalid':submitted && SignUpForm.controls['username'].errors}">
@@ -16,6 +16,9 @@
             <div *ngIf="submitted && SignUpForm.controls['username'].errors['required']">
               UserName is required
             </div>
+            <div *ngIf="submitted && SignUpForm.controls['username'].errors['minlength']">
+              UserName contains more than 4 Characters
+          </div>
           </div>
         </div>
       
@@ -28,6 +31,9 @@
             <div *ngIf="submitted && SignUpForm.controls['password'].errors['required']">
               password is required
             </div>
+            <div *ngIf="submitted && SignUpForm.controls['password'].errors['minlength']">
+              Password contains more than 8 Characters
+          </div>
           </div>
         </div>
         <div class="form-group">
@@ -51,6 +57,12 @@
               <div *ngIf="submitted && SignUpForm.controls['number'].errors['required']">
                 Number is required
               </div>
+              <div *ngIf="SignUpForm.controls['number'].errors['pattern']">
+                Invalid mobile number
+              </div>
+              <div *ngIf="submitted && SignUpForm.controls['number'].errors['minlength']">
+                Number contains 10 values
+            </div>
             </div>
         </div>
           <input type="submit" value="submit"  id="btn" >

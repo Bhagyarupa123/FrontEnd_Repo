@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FoodService } from '../services/food/food/food.service';
-import { FoodItemModel } from '../shared/models/food'
+import { CartItemModel, FoodItemModel } from '../shared/models/food'
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cart, CartModel } from '../shared/models/cart';
 import { CartService } from '../services/cart.service';
@@ -23,13 +23,15 @@ export class HomeComponent {
    ordermodel: OrderModel = new OrderModel()
    clicked:boolean = false;
    orderclicked:boolean = false;
-   
+   isAdd:boolean = true;
    
    islogin = false;
 
    rcids = []
 
    orderIds=[]
+   private cartKey = 'cartId';
+   cartItems  = [];
 
 
 
@@ -37,6 +39,8 @@ export class HomeComponent {
    
    constructor(private fs: FoodService, private router: ActivatedRoute, private cartservice: CartService,private orderservice: OrderService, private userservice: UserserviceService,private route: Router,private auth: AuthService,) { 
       this.userservice.checklogin.subscribe(x=> this.islogin=x)
+      
+      
    
    }
 
@@ -47,6 +51,10 @@ export class HomeComponent {
             this.originalItems = data;
          }
       );
+      this.cartservice.getCartItems().subscribe((data:any)=>{
+         this.cartItems = data;
+         console.log(data);
+      })
      
    }
 
@@ -57,14 +65,25 @@ export class HomeComponent {
          this.filteredItems = this.originalItems.filter(item =>
             item.recipeName.toLowerCase().includes(this.searchItem.toLowerCase())
          );
-         this.foodItems = this.filteredItems
+         if(this.filteredItems.length > 0){
+            this.foodItems = this.filteredItems
+            console.log("items found");
+         }
+         else{
+            
+            this.foodItems = [];
+            console.log("Items not found")
+            console.log(this.foodItems.length)
+         }
+
       } else {
          this.foodItems = this.originalItems;
       }
    }
 
    saveToCart(recipeId: number) {
-      this.rcids.push(recipeId);
+      //this.cartItems.push(recipeId);
+      //this.cartModel.cartId = Number(localStorage.setItem(this.cartKey,JSON.stringify(this.cartItems)))
       this.clicked = true;
       this.cartModel.userId = Number(localStorage.getItem('userId'));
       this.cartModel.recipeId = recipeId;
@@ -73,12 +92,23 @@ export class HomeComponent {
       })
      // this.resetItems()
    }
-
-   isSelected(id: number) {
-      return this.rcids.includes(id);
+   
+  
+   isSelected(recipeId: number) {
+      return this.cartservice.Items.includes(recipeId);
    }
+   /*
+   isSelected(recipeId:number){
+      if(this.cartservice.cartItem.includes(recipeId)){
+         this.isAdd = true;
+      }
+      else{
+         this.isAdd = false;
+      }
+   }*/
 
    isSelectedOrder(id: number) {
+
       return this.orderIds.includes(id);
    }
   
@@ -86,7 +116,9 @@ export class HomeComponent {
    confirmOrder(recipeId: number) {
     
       console.log("the recipe id is", recipeId)
+      
       this.orderIds.push(recipeId);
+      //this.ordermodel.orderId=Number(localStorage.setItem(this.cartKey,JSON.stringify(this.orderIds)));
       this.orderclicked = true;
       this.ordermodel.userId= Number(localStorage.getItem('userId'));
       this.ordermodel.recipeId = recipeId;

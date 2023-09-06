@@ -19,8 +19,9 @@
                 <div class="price">
                     {{ food.price | currency:'INR'}}
                 </div>
-                <span class="favorite {{food.favorite?' ' : 'not'  }}"> ♥</span>
-                <button class="delete-order" (click)="deleteOrder(food.orderId)">Cancel Order</button>
+                
+                <!--<button class="delete-order" (click)="deleteOrder(food.orderId)">Cancel Order</button>-->
+                <button class="delete-order" >Ordered</button>
 
             </div>
             </a>

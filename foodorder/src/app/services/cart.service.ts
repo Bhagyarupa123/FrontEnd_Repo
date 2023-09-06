@@ -12,22 +12,32 @@ import { CartItemModel } from '../shared/models/food';
 export class CartService {
 
   private cart: Cart= new Cart();
+  Items = []
+  cartItem = [];
+  removeItem = [];
    
   
   endpoint: string = "http://localhost:5258/api/Cart/"
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient){
+    
+  }
 
   addToCart( cart: CartModel): Observable<any>{
+    this.cartItem.push(cart.recipeId);
     return this.http.post(this.endpoint + "AddToCart", cart)
   }
 
   getCartItems(): Observable<CartItemModel[]>{
+    this.Items = this.cartItem;
     return this.http.get<CartItemModel[]>(this.endpoint + "GetRecipe/" + Number(localStorage.getItem('userId')));
   }
 
   deleteCart(id: number){
+    this.removeItem.push(id);
     return this.http.delete(this.endpoint+"DeleteRecipe/" +id);
   }
+
+  
 
 
 

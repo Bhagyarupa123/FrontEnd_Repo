@@ -19,7 +19,7 @@
             <div class="price">
                 {{ food.price | currency:'INR'}}
             </div>
-            <span class="favorite {{food.favorite?' ' : 'not'  }}"> ♥</span>
+            
         </div>
          <div>
             <button  class="cart-button" (click)="confirmOrder(food.recipeId)">Order</button>

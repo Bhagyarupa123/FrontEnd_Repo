@@ -3,7 +3,7 @@
   </head>
 <header class="header" >
     <div class="container">
-        <a class="fa fa-home  home-icon"  routerLink="/home" *ngIf="islogin"></a>
+        <a class="fa fa-home  home-icon"  routerLink="/home" ></a>
 
         <a  class="logo" style="color:  #af1313">Zomato</a>
         <div class="zomatodes" *ngIf="!islogin">Fastest food delivery app!</div>
@@ -12,7 +12,7 @@
             <ul>
                 <li><a class="fas fa-shopping-cart cart-icon" (click)="onGetCart()" *ngIf= "islogin"></a></li>
                 <li><a class="order-icon" (click)="onGetOrders()"  *ngIf="islogin">Orders</a></li>
-                <li><a class="order-icon" (click)="logout()">Logout</a></li>  
+                <li><a class="order-icon" (click)="logout()" *ngIf="islogin">Logout</a></li>  
                 
                     
                     <!-- <a routerLink="cart">Cart</a> -->

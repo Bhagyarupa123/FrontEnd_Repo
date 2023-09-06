@@ -18,11 +18,15 @@ export class UserserviceService {
 
   
   islogin= new BehaviorSubject<boolean>(false);
-  checklogin= this.islogin.asObservable();
+  checklogin= this.islogin.asObservable(); 
   url: string = "http://localhost:5258/api/Auth/Validate"
 
    userLogin(login: LoginModel): Observable<any>{
      return this.http.post(this.url, login)
+   }
+
+   getUser():Observable<any>{
+     return this.http.get(this.endpoint+ 'GetUsers');
    }
   
 

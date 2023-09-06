@@ -22,7 +22,7 @@ export class CartComponent {
 
 
 
-  constructor(private orderservice: OrderService , private router: ActivatedRoute, private cartservice: CartService){}
+  constructor(private orderservice: OrderService ,  private cartservice: CartService){}
   ngOnInit():void{
     this.cartservice.getCartItems().subscribe(
      

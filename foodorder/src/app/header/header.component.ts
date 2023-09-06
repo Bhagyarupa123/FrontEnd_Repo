@@ -15,7 +15,7 @@ export class HeaderComponent {
     this.userservice.checklogin.subscribe(x=> this.islogin=x)
   }
 
-  @Output() recipeEmitted= new EventEmitter<FoodItemModel[]>();
+  //@Output() recipeEmitted= new EventEmitter<FoodItemModel[]>();
   foodItems: FoodItemModel[] = [];
   cartModel: CartModel = new CartModel()
   searchItem: string = '';
